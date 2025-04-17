@@ -16,9 +16,9 @@
         document.getElementById("userForm").addEventListener("submit", function(event) {
             event.preventDefault();
             const userData = {
-                firstName: document.getElementById("firstName").value,
-                lastName: document.getElementById("lastName").value,
-                postalCode: document.getElementById("postalCode").value
+                firstname: document.getElementById("firstname").value,
+                lastname: document.getElementById("lastname").value,
+                postalcode: document.getElementById("postalcode").value
             };
 
             // Send data to backend (Flask API)
