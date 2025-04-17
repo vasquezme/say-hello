@@ -1,36 +1,28 @@
+Got it! Let’s focus on just setting up the HTML form first. 🚀
+✅ Basic HTML Form
+Here’s a simple HTML form to collect first name, last name, and postal code:
 <!DOCTYPE html>
 <html>
 <head>
-    <title>User Form</title>
+    <title>Guest Form</title>
 </head>
 <body>
-    <h2>Enter Your Details</h2>
-    <form id="userForm">
-        First Name: <input type="text" id="firstName"><br><br>
-        Last Name: <input type="text" id="lastName"><br><br>
-        Postal Code: <input type="text" id="postalCode"><br><br>
+    <h2>Say Hello! 👋</h2>
+    <form action="#" method="POST">
+        First Name: <input type="text" name="first_name" required><br><br>
+        Last Name: <input type="text" name="last_name" required><br><br>
+        Postal Code: <input type="text" name="postal_code" required><br><br>
         <button type="submit">Submit</button>
     </form>
-
-    <script>
-        document.getElementById("userForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            const userData = {
-                firstName: document.getElementById("firstName").value,
-                lastName: document.getElementById("lastName").value,
-                postalCode: document.getElementById("postalCode").value
-            };
-
-            // Send data to backend (Flask API)
-            fetch("https://your-backend-server.com/submit", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(userData)
-            })
-            .then(response => response.json())
-            .then(data => alert(data.message))
-            .catch(error => console.error("Error:", error));
-        });
-    </script>
 </body>
 </html>
+
+
+✅ This form will work on GitHub Pages but won’t store data yet.
+
+🔹 Next Steps
+- Want to style it with CSS?
+- Need to send the data somewhere later?
+- Want to validate inputs for correct postal code format?
+
+Let me know what’s next, and we’ll keep moving forward! 🎯✨
