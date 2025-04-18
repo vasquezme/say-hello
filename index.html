@@ -38,15 +38,21 @@
                 comments: document.getElementById("comments").value.trim()
             };
 
-            fetch("https://your-backend-server.com/submit", {
+            fetch("http://127.0.0.1:5000/submit", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(userData)
             })
                 .then(response => response.json())
-                .then(data => alert(data.message))
-                .catch(error => console.error("Error:", error));
-        });
+                .then(data => {
+                    console.log("Server response:", data); // ✅ Log server response
+                    alert(data.message);
+                })
+                .catch(error => {
+                    console.error("Fetch error:", error);
+                    alert("❌ Error submitting form!");
+                });
+
     </script>
 </body>
 
