@@ -20,11 +20,14 @@
 
             const firstName = document.getElementById("firstName").value.trim();
             const postalCode = document.getElementById("postalCode").value.trim();
+            const errorMessage = document.getElementById("errorMessage");
 
             if (firstName === "" || postalCode === "") {
                 alert("First name and postal code are required!");
                 return;
             }
+
+            errorMessage.innerText = ""; // Clear errors if valid
 
             const userData = {
                 firstName: firstName,
